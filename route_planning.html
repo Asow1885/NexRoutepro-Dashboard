@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexRoutePro Route Planning</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="route-planning-container">
+        <header class="header">
+            <h1>NexRoutePro - Route Planning</h1>
+            <button onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+        </header>
+
+        <div class="route-input-section">
+            <label for="start-location">Start Location:</label>
+            <input type="text" id="start-location" placeholder="Enter Start Location">
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="end-location" placeholder="Enter Destination">
+
+            <button onclick="calculateRoute()">Calculate Route</button>
+        </div>
+
+        <div class="weather-section">
+            <h3>Weather Information</h3>
+            <p id="weather-info">-- °F, --</p>
+        </div>
+
+        <div class="map-container" id="map" style="height: 500px;"></div>
+
+        <div class="stats-section">
+            <h3>Route Stats</h3>
+            <p id="drivers-online">Drivers Online: 0</p>
+            <p id="on-time-rate">On-Time Rate: 0%</p>
+            <p id="distance-today">Distance Today: 0 mi</p>
+            <p id="orders-overdue">Orders Overdue: 0</p>
+        </div>
+
+        <!-- 🚀 To-Do List Section -->
+        <div class="todo-section">
+            <h3>To-Do List</h3>
+            <input type="text" id="todo-input" placeholder="Enter a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="todo-list"></ul>
+        </div>
+
+        <!-- 🚀 Live News Section -->
+        <div class="news-section">
+            <h3>Latest News</h3>
+            <div id="news-container">Loading latest news...</div>
+        </div>
+    </div>
+</body>
+</html>
+

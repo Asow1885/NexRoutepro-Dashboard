@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexRoutePro Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="logo">NEXROUTEPRO</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="routes.html">Routes</a></li>
+                <li><a href="analytics.html" class="active">Analytics</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+
+        <div class="dashboard-content">
+            <div class="widget">
+                <h3>News</h3>
+                <div id="news-container">Loading latest news...</div>
+            </div>
+
+            <div class="widget">
+                <h3>Routes Overview</h3>
+                <canvas id="routesChart"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
