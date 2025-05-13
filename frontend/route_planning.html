@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexRoutePro - Route Planning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Route Planning</h2>
+    <input type="text" id="startLocation" placeholder="Starting Location">
+    <input type="text" id="endLocation" placeholder="Destination">
+    <button onclick="calculateRoute()">Calculate Route</button>
+    <div id="map" style="height: 400px;"></div>
+    <div id="etaWidget">ETA: Loading...</div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([40.7128, -74.006], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        async function calculateRoute() {
+            const start = document.getElementById('startLocation').value;
+            const end = document.getElementById('endLocation').value;
+            if (start && end) {
+                const response = await fetch(`https://api.tomtom.com/search/2/geocode/${start}.json?key=4897TcJkvnR8uGt3xlIAYtWC5GxWs9Vd`);
+                const startData = await response.json();
+                const startCoords = startData.results[0].position;
+
+                const responseEnd = await fetch(`https://api.tomtom.com/search/2/geocode/${end}.json?key=4897TcJkvnR8uGt3xlIAYtWC5GxWs9Vd`);
+                const endData = await responseEnd.json();
+                const endCoords = endData.results[0].position;
+
+                const routeResponse = await fetch(`https://api.tomtom.com/routing/1/calculateRoute/${startCoords.lat},${startCoords.lon}:${endCoords.lat},${endCoords.lon}/json?key=4897TcJkvnR8uGt3xlIAYtWC5GxWs9Vd`);
+                const routeData = await routeResponse.json();
+                const routePoints = routeData.routes[0].legs[0].points.map(point => [point.latitude, point.longitude]);
+
+                L.polyline(routePoints, { color: 'blue' }).addTo(map);
+                map.fitBounds(routePoints);
+                document.getElementById('etaWidget').innerText = `ETA: ${Math.round(routeData.routes[0].summary.travelTimeInSeconds / 60)} min`;
+            }
+        }
+    </script>
+</body>
+</html>

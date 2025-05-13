@@ -11,7 +11,7 @@
     <div class="sidebar">
         <h2>NexRoutePro</h2>
         <ul>
-            <li>Routes</li>
+            <li><a href="route_planning.html">Routes</a></li>
             <li>Analytics</li>
             <li>Projects</li>
             <li>Detailed Reports</li>
@@ -20,21 +20,23 @@
             <li>Community</li>
         </ul>
     </div>
+
     <div class="main">
-        <div class="header">
-            <h1>Welcome, Ashley</h1>
-            <button>+ Add Route</button>
-        </div>
-        <div class="widget map-container">Map Area with Real-Time Traffic</div>
-        <div class="widget">Optimized Routes</div>
-        <div class="widget">Reports</div>
-        <div class="widget">Weather</div>
-        <div class="widget">News</div>
-        <div class="widget">Messages</div>
-        <div class="widget">Chat</div>
-        <div class="widget">To-Do List</div>
+        <div class="header">Welcome, Ashley</div>
+        <div class="widget">Reports: View and download your reports here.</div>
+        <div class="widget" id="weatherWidget">Weather: Loading...</div>
+        <div class="widget">Messages: View your latest messages.</div>
+        <div class="widget">Chat: Start a new conversation.</div>
+        <div class="widget">To-Do List: Manage your tasks.</div>
     </div>
+
+    <script>
+        async function loadWeather() {
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Raleigh&appid=YOUR_OPENWEATHER_API_KEY');
+            const weatherData = await response.json();
+            document.getElementById('weatherWidget').innerText = `Weather: ${weatherData.weather[0].description}, ${Math.round(weatherData.main.temp - 273.15)}°C`;
+        }
+        loadWeather();
+    </script>
 </body>
 </html>
-      
-       
