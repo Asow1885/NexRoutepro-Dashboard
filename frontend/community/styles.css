@@ -1,0 +1,8 @@
+
+body { font-family: Arial, sans-serif; transition: opacity 0.5s ease-in-out; }
+.notification-panel { position: fixed; right: 20px; top: 60px; width: 300px; height: 400px; background: #fff; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 15px; display: none; }
+.notification-panel.visible { display: block; animation: slideIn 0.3s ease-in-out; }
+@keyframes slideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.notification-list { max-height: 300px; overflow-y: auto; }
+.navbar { display: flex; justify-content: space-between; padding: 10px 20px; background-color: #0073e6; color: #fff; }
+.nav-links button { background: none; border: none; color: #fff; cursor: pointer; }
