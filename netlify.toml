@@ -1,0 +1,15 @@
+[build]
+  command = ""
+  publish = "frontend"
+
+[[redirects]]
+  from = "/route_planning"
+  to = "/route_planning.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, Content-Type, Accept"
