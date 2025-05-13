@@ -1,14 +1,25 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    const loginBtn = document.getElementById('loginBtn');
-    const notificationPanel = document.querySelector('.notification-panel');
+    // Select the notification toggle button and the notification panel
     const notificationToggle = document.getElementById('notificationToggle');
+    const notificationPanel = document.querySelector('.notification-panel');
+    
+    // Ensure the notification panel starts hidden
+    notificationPanel.style.display = 'none';
 
-    loginBtn.addEventListener('click', function() {
-        document.body.classList.toggle('logged-in');
+    // Toggle the visibility of the notification panel when the button is clicked
+    notificationToggle.addEventListener('click', function() {
+        // Check the current state of the notification panel
+        if (notificationPanel.style.display === 'none') {
+            notificationPanel.style.display = 'block'; // Show the panel
+        } else {
+            notificationPanel.style.display = 'none'; // Hide the panel
+        }
     });
 
-    notificationToggle.addEventListener('click', function() {
-        notificationPanel.classList.toggle('visible');
+    // Optional: Close the panel if clicked outside of it
+    document.addEventListener('click', function(event) {
+        if (!notificationPanel.contains(event.target) && !notificationToggle.contains(event.target)) {
+            notificationPanel.style.display = 'none'; // Hide if clicked outside
+        }
     });
 });
