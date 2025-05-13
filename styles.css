@@ -1,67 +1,7 @@
-/* Global Styles */
-body {
-    background-color: #f4f6f9;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    display: flex;
-}
 
-.sidebar {
-    width: 240px;
-    background-color: #1f2f5a;
-    color: #fff;
-    height: 100vh;
-    position: fixed;
-    padding: 20px;
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links li {
-    margin-bottom: 12px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    background-color: #3a4e75;
-}
-
-.main-content {
-    margin-left: 260px;
-    padding: 20px;
-    width: calc(100% - 260px);
-}
-
-.widgets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-
-.widget {
-    background: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.news-feed {
-    height: 200px;
-    overflow-y: auto;
-}
+    
