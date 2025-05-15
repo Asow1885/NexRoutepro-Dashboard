@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexRoutePro - Route Planning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; }
+        .sidebar { background-color: #1c1c1c; padding: 15px; width: 250px; height: 100vh; position: fixed; }
+        .sidebar h2 { color: #ffffff; margin-bottom: 20px; }
+        .sidebar ul { list-style-type: none; padding: 0; }
+        .sidebar ul li { margin-bottom: 15px; }
+        .sidebar ul li a { color: #ffffff; text-decoration: none; font-size: 16px; margin-left: 10px; }
+        .main { margin-left: 270px; padding: 20px; }
+        .route-map { height: 400px; margin-top: 20px; border-radius: 10px; }
+        .route-info { margin-top: 20px; }
+        .route-history { margin-top: 20px; }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>NexRoutePro</h2>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="route_planning.html">Route Planning</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Route Planning</h2>
+        <div class="route-controls">
+            <input type="text" id="startLocation" placeholder="Starting Location">
+            <input type="text" id="endLocation" placeholder="Destination">
+            <button onclick="calculateRoute()">Calculate Route</button>
+            <button onclick="optimizeRoute()">Optimize Route</button>
+            <button onclick="startVoiceCommand()">🎤 Voice Command</button>
+        </div>
+
+        <div class="route-map" id="map"></div>
+        <div class="route-info">
+            <h3>Route Details</h3>
+            <p id="routeDetails">Select start and end points to see route details.</p>
+        </div>
+        <div class="route-history">
+            <h3>Route History</h3>
+            <ul id="routeHistory"><li>No routes yet.</li></ul>
+        </div>
+    </div>
+
+    <script>
+        const map = L.map('map').setView([35.0522, -78.8784], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        async function calculateRoute() {
+            const start = document.getElementById('startLocation').value;
+            const end = document.getElementById('endLocation').value;
+            if (start && end) {
+                document.getElementById('routeDetails').innerText = `Calculating route from ${start} to ${end}...`;
+                addRouteToHistory(start, end);
+                L.polyline([[35.0522, -78.8784], [34.0522, -77.8784]], {color: 'blue'}).addTo(map);
+            }
+        }
+
+        function optimizeRoute() { alert('Optimizing Route with AI...'); }
+        function startVoiceCommand() { alert('Voice Command Active - Speak Now...'); }
+
+        function addRouteToHistory(start, end) {
+            const history = document.getElementById('routeHistory');
+            const newRoute = document.createElement('li');
+            newRoute.textContent = `${start} ➡️ ${end}`;
+            history.appendChild(newRoute);
+        }
+    </script>
+</body>
+</html>
+    

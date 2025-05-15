@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexRoutePro - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; }
+        .navbar { background-color: #1c1c1c; padding: 15px; width: 100%; position: fixed; top: 0; }
+        .logo { color: #f7931e; font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 1rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover { color: #f7931e; }
+        .main { margin-top: 70px; padding: 20px; }
+        .bubble-box { background-color: #2a2a2a; padding: 15px; border-radius: 25px; margin-bottom: 20px; text-align: center; }
+        .card { background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">NexRoutePro</div>
+    <div class="nav-links">
+        <a href="route_planning.html">Route Planning</a>
+        <a href="#">Analytics</a>
+        <a href="#">Projects</a>
+        <a href="#">Detailed Reports</a>
+        <a href="#">Marketplace</a>
+        <a href="#">Bids & Auctions</a>
+        <a href="community/community.html">Community</a>
+        <a href="#" onclick="loadRouteXchange()">RouteXchange</a>
+    </div>
+</div>
+
+<div class="main" id="dashboard-content">
+    <h2>Welcome to NexRoutePro Dashboard</h2>
+    <div class="bubble-box">
+        <button onclick="addRoute()">+ Add Route</button>
+        <button onclick="startBid()">+ Start New Bid</button>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="card"><h3>Active Routes</h3><p>12 Ongoing Routes</p></div>
+        <div class="card"><h3>Upcoming Bids</h3><p>5 Open Auctions</p></div>
+        <div class="card"><h3>AI-Powered Insights</h3><p>Optimized routes for cost savings</p></div>
+        <div class="card"><h3>Recent Analytics</h3><p>View detailed route performance</p></div>
+        <div class="card"><h3>To-Do List</h3><ul><li>Optimize Route A</li><li>Review Bid #452</li><li>Contact Carrier X</li></ul></div>
+    </div>
+
+    <iframe id="routexchange-iframe" style="display: none; width: 100%; height: 800px; border: none;"></iframe>
+</div>
+
+<script>
+    function loadRouteXchange() {
+        document.getElementById("dashboard-content").innerHTML = '<iframe src="NexRoutePro RouteXchange/NexRoutePro_RouteXchange_Animated_Bubble_Perfect.html" style="width: 100%; height: 800px; border: none;"></iframe>';
+    }
+</script>
+</body>
+</html>
+
