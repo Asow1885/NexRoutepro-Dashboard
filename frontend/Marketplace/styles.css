@@ -1,0 +1,36 @@
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.dashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+.job-posting, .job-list {
+    background-color: #1e1e2d;
+    padding: 15px;
+    border-radius: 10px;
+    width: 350px;
+}
+.job-listing {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #2a2a3d;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.job-listing button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
