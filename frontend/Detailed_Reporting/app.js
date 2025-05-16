@@ -1,9 +1,19 @@
+
 document.addEventListener('DOMContentLoaded', () => {
-    const optimizeButton = document.querySelector('#optimize-btn');
-    optimizeButton.addEventListener('click', () => {
-        document.querySelector('#ai-suggestions').innerHTML = "<p>Analyzing data... Please wait.</p>";
+    const optimizeBtn = document.getElementById('optimize-btn');
+    const aiResults = document.getElementById('ai-results');
+
+    optimizeBtn.addEventListener('click', () => {
+        aiResults.innerHTML = "<p>🔍 Analyzing data... Generating AI suggestions...</p>";
         setTimeout(() => {
-            document.querySelector('#ai-suggestions').innerHTML = "<p>🚀 Optimization complete! AI suggests reducing idle time by 15% on Carrier Lane A.</p>";
+            aiResults.innerHTML = `
+                <ul>
+                    <li>🚀 Optimize routes for faster deliveries.</li>
+                    <li>📊 Recommend top-performing carriers.</li>
+                    <li>⏳ Minimize dwell time at locations.</li>
+                </ul>
+            `;
         }, 2000);
     });
 });
+    
