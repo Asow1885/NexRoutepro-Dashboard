@@ -1,14 +1,13 @@
 [build]
-  command = ""
   publish = "frontend"
 
 [[redirects]]
-  from = "/route_planning"
-  to = "/route_planning.html"
+  from = "/frontend/*"
+  to = "/frontend/:splat"
   status = 200
 
 [[redirects]]
-  from = "/frontend/Detailed Reporting/*"
+  from = "/frontend/Detailed_Reporting/*"
   to = "/frontend/Detailed_Reporting/:splat"
   status = 200
 
@@ -18,3 +17,4 @@
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Origin, Content-Type, Accept"
+
