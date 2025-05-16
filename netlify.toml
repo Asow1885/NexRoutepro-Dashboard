@@ -7,6 +7,11 @@
   to = "/route_planning.html"
   status = 200
 
+[[redirects]]
+  from = "/frontend/Detailed Reporting/*"
+  to = "/frontend/Detailed_Reporting/:splat"
+  status = 200
+
 [[headers]]
   for = "/*"
     [headers.values]
