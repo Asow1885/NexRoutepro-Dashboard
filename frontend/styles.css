@@ -1,86 +1,27 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
+
+body.dark-theme {
     background-color: #121212;
     color: #ffffff;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
 }
-
-/* Navbar */
 .navbar {
     background-color: #1c1c1c;
-    padding: 15px 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
-
-.navbar .logo {
-    font-size: 1.5rem;
-    color: #f7931e;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1rem;
-}
-
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
+    margin-left: 15px;
     transition: color 0.3s;
 }
-
 .nav-links a:hover {
     color: #f7931e;
 }
-
-/* Main Content */
-.main {
-    padding-top: 70px;
-    padding: 20px;
-}
-
-.bubble-box {
-    background-color: #2a2a2a;
-    padding: 15px;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-iframe {
-    background-color: #1e1e1e;
-    border: none;
-}
-
-/* Button Styles */
-button {
-    background-color: #f7931e;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #ffffff;
+.to-do-list, .messages, .alerts, .weather-news {
+    background-color: #1e1e2e;
+    margin: 15px 0;
+    padding: 10px;
     border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #ff9d1e;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #1c1e24;
-    color: #777;
-    margin-top: 20px;
 }

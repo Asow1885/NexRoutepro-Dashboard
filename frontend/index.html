@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexRoutePro - Dashboard</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-theme">
 <div class="navbar">
     <div class="logo">NexRoutePro</div>
     <div class="nav-links">
@@ -23,18 +24,43 @@
 <div class="main" id="dashboard-content">
     <h2>Welcome to NexRoutePro Dashboard</h2>
 
-    <!-- Load RouteXchange Button -->
-    <div class="bubble-box" style="text-align: center; margin-top: 20px;">
+    <div class="to-do-list">
+        <h3>To-Do List</h3>
+        <ul>
+            <li>Review route plans</li>
+            <li>Check inventory levels</li>
+            <li>Update client profiles</li>
+            <li>Schedule vehicle maintenance</li>
+            <li>Prepare weekly report</li>
+        </ul>
+    </div>
+
+    <div class="messages">
+        <h3>Messages</h3>
+        <div>Sarah: Please review the routes</div>
+        <div>Michael: Contracts updated</div>
+        <div>David: Prices checked</div>
+        <div>Emily: Shipment update?</div>
+    </div>
+
+    <div class="alerts">
+        <h3>Alerts</h3>
+        <div>Shipment Delay on Route #12345</div>
+    </div>
+
+    <div class="weather-news">
+        <h3>Weather & News</h3>
+        <div>Weather: New York, 72°F, Partly Cloudy</div>
+        <div>News: Supply chain trends to watch</div>
+    </div>
+
+    <div class="load-routexchange">
         <button onclick="loadRouteXchange()">Load RouteXchange</button>
     </div>
 
-    <!-- RouteXchange Iframe (Hidden Initially) -->
-    <iframe id="routexchange-iframe" 
-            style="display: none; width: 100%; height: 800px; border: none;">
-    </iframe>
+    <iframe id="routexchange-iframe" style="display: none; width: 100%; height: 800px; border: none;"></iframe>
 </div>
 
-<!-- JavaScript to Load RouteXchange -->
 <script>
     function loadRouteXchange() {
         const iframe = document.getElementById("routexchange-iframe");
@@ -44,6 +70,3 @@
 </script>
 </body>
 </html>
-
-
-
