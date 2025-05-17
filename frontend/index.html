@@ -1,36 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexRoutePro - Dashboard</title>
-    <link rel="stylesheet" href="frontend/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <div class="navbar">
     <div class="logo">NexRoutePro</div>
     <div class="nav-links">
-        <a href="frontend/Route_Planning/route_planning.html">Route Planning</a>
-        <a href="frontend/Analytics/analytics.html">Analytics</a>
-        <a href="frontend/Projects/projects.html">Projects</a>
-        <a href="frontend/Detailed_Reporting/NexRoutePro_Detailed_Reporting.html">Detailed Reports</a>
-        <a href="frontend/Marketplace/NexRoutePro_Marketplace.html">Marketplace</a>
-        <a href="frontend/Product_Auctions/NexRoutePro_Product_Auctions.html">Bids & Auctions</a>
-        <a href="frontend/Community/community.html">Community</a>
+        <a href="./route_planning.html">Route Planning</a>
+        <a href="./Dashboard/analytics.html">Analytics</a>
+        <a href="./Detailed_Reporting/NexRoutePro_Detailed_Reporting.html">Detailed Reports</a>
+        <a href="./Marketplace/NexRoutePro_Marketplace.html">Marketplace</a>
+        <a href="./NexRoutePro_Bids_Auctions/NexRoutePro_Product_Auctions.html">Bids & Auctions</a>
+        <a href="./community/community.html">Community</a>
         <a href="#" onclick="loadRouteXchange()">RouteXchange</a>
     </div>
 </div>
+
 <div class="main" id="dashboard-content">
     <h2>Welcome to NexRoutePro Dashboard</h2>
-</div>
-<iframe id="routexchange-iframe" style="display: none; width: 100%; height: 800px; border: none;"></iframe>
 
+    <!-- Load RouteXchange Button -->
+    <div class="bubble-box" style="text-align: center; margin-top: 20px;">
+        <button onclick="loadRouteXchange()">Load RouteXchange</button>
+    </div>
+
+    <!-- RouteXchange Iframe (Hidden Initially) -->
+    <iframe id="routexchange-iframe" 
+            style="display: none; width: 100%; height: 800px; border: none;">
+    </iframe>
+</div>
+
+<!-- JavaScript to Load RouteXchange -->
 <script>
     function loadRouteXchange() {
-        document.getElementById("routexchange-iframe").style.display = "block";
-        document.getElementById("routexchange-iframe").src = "frontend/NexRoutePro_RouteXchange/NexRoutePro_RouteXchange_Animated_Bubble_Perfect.html";
+        const iframe = document.getElementById("routexchange-iframe");
+        iframe.style.display = "block";
+        iframe.src = "./NexRoutePro_RouteXchange/NexRoutePro_RouteXchange_Animated_Bubble_Perfect.html";
     }
 </script>
 </body>
 </html>
+
+
+
