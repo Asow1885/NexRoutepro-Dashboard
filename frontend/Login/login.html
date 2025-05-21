@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - NexRoutePro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .login-container {
+      background-color: #121212;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 40px 30px;
+      width: 360px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .login-container p {
+      color: #f7931e;
+      margin-bottom: 30px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+      background-color: #1f1f1f;
+      color: white;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      background-color: #f7931e;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-container .forgot {
+      color: #999;
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .login-container .divider {
+      color: #666;
+      margin: 24px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: space-around;
+      margin: 16px 0;
+    }
+
+    .social-icons i {
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .social-icons i:hover {
+      color: #f7931e;
+    }
+
+    .signup-link {
+      font-size: 0.85rem;
+      margin-top: 24px;
+      color: #aaa;
+    }
+
+    .signup-link a {
+      color: #f7931e;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    .bluesky-icon {
+      font-size: 1.5rem;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>WELCOME BACK</h1>
+    <p>Log in to your account</p>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <a href="#" class="forgot">Forgot Password?</a>
+    <button>Log In</button>
+    <div class="divider">or log in with</div>
+    <div class="social-icons">
+      <i class="fab fa-google"></i>
+      <i class="fab fa-x-twitter"></i>
+      <div class="bluesky-icon" title="Bluesky">b</div>
+      <i class="fab fa-linkedin"></i>
+    </div>
+    <div class="signup-link">Don’t have an account? <a href="signup.html">Sign up</a></div>
+  </div>
+</body>
+</html>

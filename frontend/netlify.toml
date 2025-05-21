@@ -1,0 +1,20 @@
+[build]
+  publish = "frontend"
+
+[[redirects]]
+  from = "/frontend/*"
+  to = "/frontend/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/frontend/Detailed_Reporting/*"
+  to = "/frontend/Detailed_Reporting/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, Content-Type, Accept"
+
